@@ -15,6 +15,7 @@ scores_collection = db['scores']
 
 
 
+
 # # Routes
 # @app.route('/')
 # def auth():
