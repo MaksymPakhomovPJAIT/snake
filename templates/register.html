@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Register</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/registerPageStyles.css') }}"
+    />
+  </head>
+  <body>
+    <div>
+      <div class="modal">
+        <div class="username-input-wrapper">
+          <label for="username">Enter your username</label>
+          <input id="username" type="text" placeholder="Username" />
+          <div id="username-error" class="error-message"></div>
+        </div>
+        <div class="color-input-wrapper">
+          <label for="color">Pick snake color</label>
+          <input id="color" type="color" value="#e66465" />
+        </div>
+
+        <div class="circles-wrapper">
+          <div id="color-circle" value="#e66465"></div>
+          <div id="color-circle" value="#e66465"></div>
+          <div id="color-circle" value="#e66465"></div>
+          <div id="color-circle" value="#e66465"></div>
+          <div id="color-circle" value="#e66465"></div>
+        </div>
+      </div>
+      <button id="start" class="start-button">Start Playing</button>
+    </div>
+    <script src="{{ url_for('static', filename='js/auth.js') }}"></script>
+  </body>
+</html>

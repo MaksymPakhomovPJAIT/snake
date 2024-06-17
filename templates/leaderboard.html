@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="" />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/userPageStyles.css') }}"
+    />
+    <title>LeaderBoard</title>
+  </head>
+  <body>
+    <div class="container-main">
+      <div class="row">
+        <a href="/game" class="back-btn">
+          <img
+            src="{{ url_for('static', filename='images/left-arrow.svg') }}"
+          />
+        </a>
+
+        <h1 class="title">LeaderBoard</h1>
+      </div>
+      <div class="bottom-wrapper">
+        <div class="columns-name">
+          <div class="place-col">№</div>
+          <div class="nick-col">nick</div>
+          <div class="points-col">points</div>
+        </div>
+        <div class="wrapper">
+          {% for user in users %}
+          <div class="elem">
+            <div class="place">
+              {% if loop.index
+              > 3 %} {{loop.index}} {% endif %}
+            </div>
+            <div class="nick">{{ user.username }}</div>
+            <div class="points">{{ user.points }}</div>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

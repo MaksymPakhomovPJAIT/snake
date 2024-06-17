@@ -1,0 +1,60 @@
+.modal {
+  min-width: 410px;
+  padding: 40px;
+  border-radius: 8px;
+  background-color: #5656ef;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+label {
+  font-size: 32px;
+}
+
+.username-input-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+#username {
+  padding: 20px;
+  border-radius: 6px;
+  font-size: 18px;
+  border: none;
+  outline: none;
+}
+
+.error-message {
+  min-height: 18px;
+}
+
+.start-button {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  width: 100%;
+  height: 58px;
+  background-color: #ce7d2d;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 24px;
+}
+
+button {
+  cursor: pointer;
+  transition: tranform 0.3s ease-in-out;
+}
+
+button:active {
+  transform: translateY(2px);
+}
+
+#color-circle {
+  cursor: pointer;
+}
+
+#color {
+  cursor: pointer;
+}

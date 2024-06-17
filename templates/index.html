@@ -1,0 +1,71 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Index Page</title>
+        <link
+                rel="stylesheet"
+                href="{{ url_for('static', filename='css/userPageStyles.css') }}"
+        />
+        <link
+                rel="stylesheet"
+                href="{{ url_for('static', filename='css/styles.css') }}"
+        />
+        <link
+                rel="stylesheet"
+                href="{{ url_for('static', filename='css/registerPageStyles.css') }}"
+        />
+</head>
+<body>
+<div class="docker">
+    <div id="game">
+        <div class="canvas-wrapper">
+            <canvas id="game-canvas" width="600" height="600"></canvas>
+        </div>
+        <div class="game-header">
+            <div class="game-username">
+                <span>Player:</span>
+                <span class="player" id="player"></span>
+            </div>
+            <div class="game-score">
+                <span>Score:</span>
+                <span class="score-count" id="score">0</span>
+            </div>
+        </div>
+        <div class="buttons">
+            <button id="restartButton">Restart</button>
+            <button class="logout-button">Log out</button>
+        </div>
+    </div>
+    <div>
+        <div>
+            <div class="modal">
+                <div class="username-input-wrapper">
+                    <label for="username">Enter your username</label>
+                    <input id="username" type="text" placeholder="Username"/>
+                    <div id="username-error" class="error-message"></div>
+                </div>
+            </div>
+            <button id="start" class="start-button">Start Playing</button>
+        </div>
+        <div class="container-main">
+            <div class="wrapper">
+                {% for user in users %}
+                    <div class="elem">
+                        <div class="place">
+                            {{ loop.index }}
+                        </div>
+                        <div class="nick">{{ user.username }}</div>
+                        <div class="points">{{ user.points }}</div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
+<script src="https://cdn.socket.io/4.0.1/socket.io.min.js"></script>
+<script src="{{ url_for('static', filename='js/auth.js') }}"></script>
+<script src="{{ url_for('static', filename='js/snake.js') }}"></script>
+</body>
+</html>
+
