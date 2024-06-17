@@ -4,6 +4,7 @@ class SnakeGame:
     def __init__(self):
         self.reset()
 
+
     def reset(self):
         self.box = 20
         self.width = 600
