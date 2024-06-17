@@ -14,6 +14,7 @@ db = client['snake_game']
 scores_collection = db['scores']
 
 
+
 # # Routes
 # @app.route('/')
 # def auth():
